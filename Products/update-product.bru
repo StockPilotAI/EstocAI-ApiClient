@@ -1,0 +1,34 @@
+meta {
+  name: update product
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{apiUrl}}/api/v1/products/{{productId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nome": "Cafe Especial 550g",
+    
+    "descricao": "Cafe torrado e moido atualizado",
+    "codigoBarras": "7891234567890",
+    "categoria": "COMIDA",
+    "quantidade": 30,
+    "valorVenda": 31.9,
+    "estoqueMinimo": 8
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

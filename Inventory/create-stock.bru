@@ -1,0 +1,29 @@
+meta {
+  name: create stock
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{apiUrl}}/api/v1/inventory/estoques
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "descricao": "Estoque padrao da empresa",
+    "localizacao": "Cidade Ocidental - GO",
+    "capacidadeTotal": 1000
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

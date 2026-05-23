@@ -1,0 +1,33 @@
+meta {
+  name: create company
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{apiUrl}}/api/v1/companies
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+  Content-Type: application/json
+  X-User-Role: ADMIN
+}
+
+body:json {
+  {
+    "razaoSocial": "Empresa de Teste LTDA",
+    "nomeFantasia": "Teste Emp",
+    "email": "contato@empresa.com",
+    "endereco": "Rua das Flores, 123",
+    "telefone": "11999998888",
+    "ativo": true
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,19 @@
+meta {
+  name: health check
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{apiUrl}}/health
+  body: none
+  auth: none
+}
+
+headers {
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

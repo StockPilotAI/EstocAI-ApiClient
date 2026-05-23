@@ -1,0 +1,33 @@
+meta {
+  name: create product
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{apiUrl}}/api/v1/products
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "estoqueId": "{{estoqueId}}",
+    "nome": "Cafe Especial 500g",
+    "descricao": "Cafe torrado e moido",
+    "codigoBarras": "7891234567890",
+    "categoria": "COMIDA",
+    "quantidade": 25,
+    "estoqueMinimo": 5
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

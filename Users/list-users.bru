@@ -1,0 +1,21 @@
+meta {
+  name: list users
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{apiUrl}}/api/v1/users
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+  X-User-Role: ADMIN
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,25 @@
+meta {
+  name: get company
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{apiUrl}}/api/v1/companies/{{empresaId}}
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+  X-User-Role: ADMIN
+}
+
+vars:pre-request {
+  empresaId: 123
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

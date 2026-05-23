@@ -1,0 +1,34 @@
+meta {
+  name: update user
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{apiUrl}}/api/v1/users/{{usuarioId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+  Content-Type: application/json
+  X-User-Role: ADMIN
+}
+
+body:json {
+  {
+    "nomeCompleto": "Vinicius Mendes",
+    
+    "tipoAcesso": "ADMIN"
+  }
+}
+
+vars:pre-request {
+  usuarioId: JAYKzyhJgnsCMwCdS
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

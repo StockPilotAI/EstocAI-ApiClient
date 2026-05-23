@@ -1,0 +1,25 @@
+meta {
+  name: get user
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{apiUrl}}/api/v1/users/{{usuarioId}}
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+  X-User-Role: ADMIN
+}
+
+vars:pre-request {
+  usuarioId: JAYKzyhJgnsCMwCdS
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
