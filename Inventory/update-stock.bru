@@ -1,11 +1,11 @@
 meta {
-  name: update user
+  name: update stock
   type: http
-  seq: 4
+  seq: 7
 }
 
 put {
-  url: {{apiUrl}}/api/v1/users/{{userId}}
+  url: {{apiUrl}}/api/v1/stocks/{{inventoryId}}
   body: json
   auth: none
 }
@@ -18,8 +18,10 @@ headers {
 
 body:json {
   {
-    "fullName": "Ada Byron",
-    "accessLevel": "VISUALIZADOR"
+    "name": "Main Stock Updated",
+    "description": "Updated primary inventory",
+    "location": "Warehouse B",
+    "totalCapacity": 1500
   }
 }
 

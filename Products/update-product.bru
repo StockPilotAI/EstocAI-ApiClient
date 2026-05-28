@@ -11,20 +11,20 @@ put {
 }
 
 headers {
+  X-User-Role: {{userRole}}
   Authorization: Bearer {{accessToken}}
   Content-Type: application/json
 }
 
 body:json {
   {
-    "nome": "Cafe Especial 550g",
-    
-    "descricao": "Cafe torrado e moido atualizado",
-    "codigoBarras": "7891234567890",
-    "categoria": "COMIDA",
-    "quantidade": 30,
-    "valorVenda": 31.9,
-    "estoqueMinimo": 8
+    "name": "Cafe Especial 500g",
+    "description": "Cafe torrado e moido atualizado",
+    "barcode": "7891234567890",
+    "category": "COMIDA",
+    "quantity": 30,
+    "salePrice": 31.9,
+    "minimumStock": 8
   }
 }
 

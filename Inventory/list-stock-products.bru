@@ -5,12 +5,13 @@ meta {
 }
 
 get {
-  url: {{apiUrl}}/api/v1/inventory/estoques/{{estoqueId}}/produtos
+  url: {{apiUrl}}/api/v1/inventories/estoques/{{inventoryId}}/produtos
   body: none
   auth: none
 }
 
 headers {
+  X-User-Role: {{userRole}}
   Authorization: Bearer {{accessToken}}
 }
 

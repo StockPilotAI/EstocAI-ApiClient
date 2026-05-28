@@ -1,11 +1,11 @@
 meta {
-  name: update user
+  name: cancel movement
   type: http
   seq: 4
 }
 
-put {
-  url: {{apiUrl}}/api/v1/users/{{userId}}
+post {
+  url: {{apiUrl}}/api/v1/movements/{{movementId}}/cancel
   body: json
   auth: none
 }
@@ -18,8 +18,7 @@ headers {
 
 body:json {
   {
-    "fullName": "Ada Byron",
-    "accessLevel": "VISUALIZADOR"
+    "reason": "Lancamento duplicado"
   }
 }
 

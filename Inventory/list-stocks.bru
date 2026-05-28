@@ -1,13 +1,18 @@
 meta {
-  name: delete user
+  name: list stocks
   type: http
   seq: 5
 }
 
-delete {
-  url: {{apiUrl}}/api/v1/users/{{userId}}
+get {
+  url: {{apiUrl}}/api/v1/stocks?page=1&limit=10
   body: none
   auth: none
+}
+
+params:query {
+  page: 1
+  limit: 10
 }
 
 headers {

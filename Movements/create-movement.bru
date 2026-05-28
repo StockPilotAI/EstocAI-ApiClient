@@ -1,11 +1,11 @@
 meta {
-  name: create product
+  name: create movement
   type: http
-  seq: 5
+  seq: 1
 }
 
 post {
-  url: {{apiUrl}}/api/v1/products
+  url: {{apiUrl}}/api/v1/movements
   body: json
   auth: none
 }
@@ -19,13 +19,11 @@ headers {
 body:json {
   {
     "inventoryId": "{{inventoryId}}",
-    "name": "Cafe Especial 500g",
-    "description": "Cafe torrado e moido",
-    "barcode": "7891234567890",
-    "category": "COMIDA",
-    "quantity": 25,
-    "salePrice": 29.9,
-    "minimumStock": 5
+    "productId": "{{productId}}",
+    "movementType": "ENTRADA",
+    "quantity": 10,
+    "totalValue": 299,
+    "notes": "Entrada inicial"
   }
 }
 

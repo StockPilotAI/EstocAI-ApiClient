@@ -1,0 +1,35 @@
+meta {
+  name: create supplier
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{apiUrl}}/api/v1/suppliers
+  body: json
+  auth: none
+}
+
+headers {
+  X-User-Role: {{userRole}}
+  Authorization: Bearer {{accessToken}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "companyId": null,
+    "name": "Default Supplier",
+    "cnpj": "22.333.444/0001-55",
+    "representativeName": "Supplier Contact",
+    "email": "supplier@example.com",
+    "address": "Supplier Street, 200",
+    "averageRating": 4.5,
+    "active": true
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

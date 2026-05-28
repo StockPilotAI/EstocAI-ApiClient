@@ -5,21 +5,24 @@ meta {
 }
 
 post {
-  url: {{apiUrl}}/api/v1/inventory/estoques
+  url: {{apiUrl}}/api/v1/stocks
   body: json
   auth: none
 }
 
 headers {
+  X-User-Role: {{userRole}}
   Authorization: Bearer {{accessToken}}
   Content-Type: application/json
 }
 
 body:json {
   {
-    "descricao": "Estoque padrao da empresa",
-    "localizacao": "Cidade Ocidental - GO",
-    "capacidadeTotal": 1000
+    "companyId": "{{companyId}}",
+    "name": "Main Stock",
+    "description": "Primary inventory",
+    "location": "Warehouse A",
+    "totalCapacity": 1000
   }
 }
 

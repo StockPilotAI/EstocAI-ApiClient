@@ -11,17 +11,21 @@ post {
 }
 
 headers {
+  X-User-Role: {{userRole}}
   Authorization: Bearer {{accessToken}}
   Content-Type: application/json
-  X-User-Role: ADMIN
 }
 
 body:json {
   {
-    "emailPrincipal": "joao.silva@example.com",
-    "cpf": "11110111130",
-    "password": "12345678",
-    "tipoAcesso": "ADMIN"
+    "companyId": null,
+    "fullName": "Ada Lovelace",
+    "nickname": "Ada",
+    "primaryEmail": "ada@example.com",
+    "cpf": "123.456.789-09",
+    "accessLevel": "OPERADOR",
+    "active": true,
+    "password": "Password123"
   }
 }
 

@@ -11,19 +11,20 @@ post {
 }
 
 headers {
+  X-User-Role: {{userRole}}
   Authorization: Bearer {{accessToken}}
   Content-Type: application/json
-  X-User-Role: ADMIN
 }
 
 body:json {
   {
-    "razaoSocial": "Empresa de Teste LTDA",
-    "nomeFantasia": "Teste Emp",
-    "email": "contato@empresa.com",
-    "endereco": "Rua das Flores, 123",
-    "telefone": "11999998888",
-    "ativo": true
+    "legalName": "EstocAI Tecnologia LTDA",
+    "tradeName": "EstocAI",
+    "cnpj": "11.222.333/0001-81",
+    "email": "contato@estocai.com",
+    "address": "Rua Central, 100",
+    "phone": "11999999999",
+    "active": true
   }
 }
 

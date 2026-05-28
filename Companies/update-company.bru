@@ -5,20 +5,21 @@ meta {
 }
 
 put {
-  url: {{apiUrl}}/api/v1/companies/{{empresaId}}
+  url: {{apiUrl}}/api/v1/companies/{{companyId}}
   body: json
   auth: none
 }
 
 headers {
+  X-User-Role: {{userRole}}
   Authorization: Bearer {{accessToken}}
   Content-Type: application/json
 }
 
 body:json {
   {
-    "nomeFantasia": "Nome Alterado S.A.",
-    "telefone": "11988887777"
+    "tradeName": "EstocAI Labs",
+    "phone": "11988887777"
   }
 }
 

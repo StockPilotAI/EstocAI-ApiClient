@@ -1,11 +1,11 @@
 meta {
-  name: delete user
+  name: get stock summary
   type: http
-  seq: 5
+  seq: 9
 }
 
-delete {
-  url: {{apiUrl}}/api/v1/users/{{userId}}
+get {
+  url: {{apiUrl}}/api/v1/stocks/{{inventoryId}}/summary
   body: none
   auth: none
 }

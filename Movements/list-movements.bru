@@ -1,19 +1,21 @@
 meta {
-  name: list products by stock
+  name: list movements
   type: http
-  seq: 8
+  seq: 3
 }
 
 get {
-  url: {{apiUrl}}/api/v1/products?page=1&limit=10&inventoryId={{inventoryId}}
+  url: {{apiUrl}}/api/v1/movements?inventoryId={{inventoryId}}&productId={{productId}}&movementType=ENTRADA
   body: none
   auth: none
 }
 
 params:query {
-  page: 1
-  limit: 10
   inventoryId: {{inventoryId}}
+  productId: {{productId}}
+  startDate:
+  endDate:
+  movementType: ENTRADA
 }
 
 headers {

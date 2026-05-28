@@ -13,10 +13,10 @@ get {
 params:query {
   page: 1
   limit: 10
-  ~estoqueId: {{estoqueId}}
 }
 
 headers {
+  X-User-Role: {{userRole}}
   Authorization: Bearer {{accessToken}}
 }
 
