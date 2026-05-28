@@ -1,0 +1,33 @@
+meta {
+  name: update supplier
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{apiUrl}}/api/v1/suppliers/{{supplierId}}
+  body: json
+  auth: none
+}
+
+headers {
+  X-User-Role: {{userRole}}
+  Authorization: Bearer {{accessToken}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Updated Supplier",
+    "representativeName": "Updated Contact",
+    "email": "updated@example.com",
+    "address": "Updated Street, 300",
+    "averageRating": 4.8,
+    "active": true
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

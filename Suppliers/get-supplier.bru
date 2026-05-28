@@ -1,0 +1,21 @@
+meta {
+  name: get supplier
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{apiUrl}}/api/v1/suppliers/{{supplierId}}
+  body: none
+  auth: none
+}
+
+headers {
+  X-User-Role: {{userRole}}
+  Authorization: Bearer {{accessToken}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

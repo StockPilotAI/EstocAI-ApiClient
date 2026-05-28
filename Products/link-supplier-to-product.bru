@@ -1,0 +1,32 @@
+meta {
+  name: link supplier to product
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{apiUrl}}/api/v1/products/{{productId}}/suppliers
+  body: json
+  auth: none
+}
+
+headers {
+  X-User-Role: {{userRole}}
+  Authorization: Bearer {{accessToken}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "supplierId": "{{supplierId}}",
+    "lastPurchasePrice": 29.9,
+    "lastPurchaseDate": "2026-05-27T00:00:00",
+    "deliveryTimeDays": 7,
+    "preferredSupplier": true
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
